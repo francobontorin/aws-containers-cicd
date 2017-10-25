@@ -1,0 +1,282 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>CI/CD Architecture &mdash; Octank CI/CD POC 1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Octank CI/CD POC 1.0 documentation" href="index.html"/>
+        <link rel="next" title="Auto Healing Architecture" href="autohealing.html"/>
+        <link rel="prev" title="Author" href="author.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Octank CI/CD POC
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="author.html">Author</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">CI/CD Architecture</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1">CodeCommit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">CodePipeline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">CodeBuild</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">CloudFormation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">ECS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id6">Lambda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#octank-ci-cd-cloud-native-architecture">Octank CI/CD Cloud Native Architecture</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="autohealing.html">Auto Healing Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lex.html">Lex Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Octank CI/CD POC</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>CI/CD Architecture</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/architecture.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="figure align-right">
+<a class="reference internal image-reference" href="_images/aws_logo.png"><img alt="_images/aws_logo.png" src="_images/aws_logo.png" style="width: 100.0px; height: 40.0px;" /></a>
+</div>
+<div class="section" id="ci-cd-architecture">
+<h1>CI/CD Architecture<a class="headerlink" href="#ci-cd-architecture" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2><a class="reference external" href="https://aws.amazon.com/codecommit/">CodeCommit</a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>AWS CodeCommit is a fully-managed source control service that makes it easy for companies to host secure and highly scalable private Git repositories. CodeCommit eliminates the need to operate your own source control system or worry about scaling its infrastructure.</p>
+</div>
+<div class="section" id="id2">
+<h2><a class="reference external" href="https://aws.amazon.com/codepipeline/">CodePipeline</a><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>AWS CodePipeline is a continuous integration and continuous delivery service for fast and reliable application and infrastructure updates. CodePipeline builds, tests, and deploys your code every time there is a code change, based on the release process models you define.</p>
+</div>
+<div class="section" id="id3">
+<h2><a class="reference external" href="https://aws.amazon.com/codebuild/">CodeBuild</a><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>AWS CodeBuild is a fully managed build service that compiles source code, runs tests, and produces software packages that are ready to deploy. With CodeBuild, you donÕ need to provision, manage, and scale your own build servers.</p>
+<p>CodeBuild triggers an automated test using Ghost Inspector to identify whether the new build is compliant or not.</p>
+</div>
+<div class="section" id="id4">
+<h2><a class="reference external" href="https://aws.amazon.com/cloudformation/">CloudFormation</a><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>AWS CloudFormation gives developers and systems administrators an easy way to create and manage a collection of related AWS resources, provisioning and updating them in an orderly and predictable fashion.</p>
+</div>
+<div class="section" id="id5">
+<h2><a class="reference external" href="https://aws.amazon.com/ecs/">ECS</a><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>Amazon EC2 Container Service (ECS) is a highly scalable, high performance container management service that supports Docker containers and allows you to easily run applications on a managed cluster of Amazon EC2 instances.</p>
+</div>
+<div class="section" id="id6">
+<h2><a class="reference external" href="https://aws.amazon.com/lambda/">Lambda</a><a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<p>Amazon Lambda lets you run code without provisioning or managing servers. You pay only for the compute time you consume - there is no charge when your code is not running.</p>
+</div>
+<div class="section" id="octank-ci-cd-cloud-native-architecture">
+<h2>Octank CI/CD Cloud Native Architecture<a class="headerlink" href="#octank-ci-cd-cloud-native-architecture" title="Permalink to this headline">¶</a></h2>
+<div class="figure">
+<img alt="_images/cicd_architecture.png" src="_images/cicd_architecture.png" />
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="autohealing.html" class="btn btn-neutral float-right" title="Auto Healing Architecture" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="author.html" class="btn btn-neutral" title="Author" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Franco Bontorin.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
