@@ -2,7 +2,7 @@
 Directions on how to launch this sample app on Amazon ECS can be found in the documentation: [Docker basics](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/docker-basics.html).
 
 # Introduction
-Fork from https://github.com/awslabs/ecs-refarch-continuous-deployment that adds new components such as GhostInspector used fro Automated UI testing, a Lex chatbot integrated with a slack channel that manages and trigger deployments.
+Fork from https://github.com/awslabs/ecs-refarch-continuous-deployment that adds new components such as GhostInspector used for Automated UI testing, a Lex chatbot integrated with a slack channel that manages and trigger deployments.
 
 # Objectives
 * Create an automated CI/CD Pipeline where every commit will trigger a set of actions that builds a container image, test, validate and promote the build image to different stages
