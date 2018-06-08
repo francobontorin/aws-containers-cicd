@@ -16,17 +16,17 @@ Fork from https://github.com/awslabs/ecs-refarch-continuous-deployment that adds
 
 # CICD Architecture
 
-![Alt text](http://prod.octankcorp.com/_images/cicd_architecture.png "CI/CD Architecture")
+![Alt text](http://oktan-loadb-17qlijsfpe746-1411329010.us-east-1.elb.amazonaws.com/_images/cicd_architecture.png "CI/CD Architecture")
 
 
 # Auto Healing/Blue Green
 
-![Alt text](http://prod.octankcorp.com/_images/ah_architecture.png "Blue/Green Architecture")
+![Alt text](http://oktan-loadb-17qlijsfpe746-1411329010.us-east-1.elb.amazonaws.com/_images/ah_architecture.png "Blue/Green Architecture")
 
 
 # Lex Architecture
 
-![Alt text](http://prod.octankcorp.com/_images/lex.png "Lex Architecture")
+![Alt text](http://oktan-loadb-17qlijsfpe746-1411329010.us-east-1.elb.amazonaws.com/_images/lex.png "Lex Architecture")
 
 
 # Author
